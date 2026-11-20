@@ -28,11 +28,12 @@ Spadlý běh pošle GitHub e-mailem vlastníkovi repozitáře. Ověřte si to v
 
 ## Co o tom platí
 
-- **Repozitář musí být veřejný.** Minuty Actions jsou u veřejných repozitářů zdarma
-  bez limitu, u privátních se na free tarifu počítají z 2 000 minut měsíčně. Kontrola
-  každých 5 minut znamená ~8 640 běhů měsíčně, což by se do privátní kvóty nevešlo.
-  Nic citlivého tady proto není — jen seznam domén, které jsou veřejné tak jako tak.
-  Logy a historie měření se do repozitáře **nezapisují**.
+- **Repozitář je veřejný, a musí zůstat.** Minuty Actions jsou u veřejných repozitářů
+  zdarma bez limitu, u privátních se na free tarifu počítají z 2 000 minut měsíčně.
+  Kontrola každých 5 minut znamená ~8 640 běhů měsíčně, což by se do privátní kvóty
+  nevešlo — padla by za týden. Nic citlivého tady proto není: jen seznam domén, které
+  jsou veřejné tak jako tak, dva bash skripty a tenhle README. Žádné klíče, žádné
+  přístupy, logy a historie měření se do repozitáře **nezapisují**.
 - **Cron na GitHubu není přesný.** Naplánované běhy se při zátěži zdrží,
   reálná granularita je 5–20 minut. Na výpadky, které u Webglobe trvají minuty až
   hodiny a chodí řádově raz měsíčně, to stačí.
