@@ -1,13 +1,13 @@
 name: Kontrola dostupnosti webů
 
 on:
-  # POZOR: plán je zatím vypnutý, dokud je repozitář privátní. Kontrola každých
-  # 5 minut znamená ~8 640 běhů měsíčně a privátní repozitář má na free tarifu
-  # jen 2 000 minut. Po přepnutí na veřejný se řádek s cronem odkomentuje.
-  # schedule:
-  #   # Každých 5 minut. GitHub se u naplánovaných běhů umí zdržet,
-  #   # reálná granularita je 5–20 minut.
-  #   - cron: "*/5 * * * *"
+  schedule:
+    # Každých 5 minut. GitHub se u naplánovaných běhů umí zdržet,
+    # reálná granularita je 5–20 minut.
+    #
+    # POZOR: tenhle interval je zdarma jen díky tomu, že je repozitář veřejný.
+    # Kdyby se přepnul na privátní, 2 000 minut free kvóty padne za týden.
+    - cron: "*/5 * * * *"
   workflow_dispatch:
 
 # Běh navíc nestartuje, když předchozí ještě běží.
