@@ -2,12 +2,13 @@ name: Kontrola dostupnosti webů
 
 on:
   schedule:
-    # Každých 5 minut. GitHub se u naplánovaných běhů umí zdržet,
-    # reálná granularita je 5–20 minut.
+    # Každých 5 minut, ale posunuto mimo celé pětiminutovky. Na kulatých časech
+    # startují plány celého GitHubu naráz a běhy se tam nejvíc zdržují nebo
+    # zahazují. Reálná granularita je i tak 5–20 minut.
     #
     # POZOR: tenhle interval je zdarma jen díky tomu, že je repozitář veřejný.
     # Kdyby se přepnul na privátní, 2 000 minut free kvóty padne za týden.
-    - cron: "*/5 * * * *"
+    - cron: "3,8,13,18,23,28,33,38,43,48,53,58 * * * *"
   workflow_dispatch:
 
 # Běh navíc nestartuje, když předchozí ještě běží.
