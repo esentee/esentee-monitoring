@@ -1,0 +1,21 @@
+name: Keepalive
+
+# GitHub naplánovaná workflow po 60 dnech bez aktivity v repozitáři sám vypne.
+# Tahle úloha commitne prvního každého měsíce časovou značku, čímž je repo
+# pořád aktivní a kontrola dostupnosti se nevypne.
+
+on:
+  schedule:
+    - cron: "17 3 1 * *"
+  workflow_dispatch:
+
+jobs:
+  keepalive:
+    name: Udržet naplánované běhy zapnuté
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+      - name: Commitnout časovou značku
+        run: bash keepalive.sh
